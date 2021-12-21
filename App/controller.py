@@ -1,5 +1,4 @@
 from App.constant import HEIGHT, WIDTH
-from .camera import Camera
 from .image import Img
 from .utils import Utils
 from tkinter import filedialog
@@ -7,7 +6,6 @@ from tkinter import filedialog
 class Controller:
     def __init__(self, master):
         self.master = master
-        self.camera = Camera(self)
         self.image = Img(self)
         self.utils = Utils()
         self.item_id = 0
@@ -15,10 +13,6 @@ class Controller:
     def show_frame(self, frame):
         frame = self.master.frames[frame]
         frame.tkraise()
-
-    def show_camera(self):
-        self.camera.start()
-        self.camera.mainloop()
 
     def show_image(self):
         file = filedialog.askopenfilename(

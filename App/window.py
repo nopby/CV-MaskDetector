@@ -1,5 +1,5 @@
 from tkinter import Frame, Tk
-from .frame import StartPage, DetectPage
+from .frame import StartPage
 from .controller import Controller
 from .constant import TITLE, WIDTH, HEIGHT
 
@@ -14,16 +14,11 @@ class Window(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
         self.start(TITLE, WIDTH, HEIGHT)
-        self.frames = {}
         self.container = Container(self)
         self.controller = Controller(self)
-        for F in (StartPage, DetectPage):
-            frame = F(self.container, self.controller)
-
-            self.frames[F] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
-
-        self.controller.show_frame(StartPage)
+        self.frame= StartPage(self.container, self.controller)
+        self.frame.grid(row=0, column=0, sticky="nsew")
+        
 
     def start(self, title, width, height):
         self.title(title)

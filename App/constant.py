@@ -1,7 +1,7 @@
 
 
-WIDTH=848
-HEIGHT=480
+WIDTH=600
+HEIGHT=400
 TITLE="Tugas Kelompok 8"
 MODEL="App/Model/mask_detector/mask_detector.model"
 PROTOTEXT="App/Model/face_detector/deploy.prototxt"
