@@ -1,0 +1,7 @@
+Package                      Version
+---------------------------- ---------
+numpy                        1.21.4
+opencv-python                4.5.4.60
+Pillow                       8.4.0
+tensorflow                   2.7.0
+tk                           0.1.0
